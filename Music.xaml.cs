@@ -25,7 +25,7 @@ using TagLib;
 namespace FMusic
 {
     /// <summary>
-    /// Music.xaml 的交互逻辑
+    /// Music.xaml 的交互逻辑git?
     /// </summary>
     public partial class Music : Window
     {
