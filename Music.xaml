@@ -1,0 +1,324 @@
+﻿<Window x:Class="FMusic.Music"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FMusic" xmlns:drawing="clr-namespace:System.Drawing;assembly=System.Drawing"
+        mc:Ignorable="d"
+        Title="Music"  
+        Icon="D:\SunTalk\FMusic\img\music .png"
+        Foreground="AliceBlue"
+        Loaded="Window_Loaded"
+        d:DesignHeight="770" d:DesignWidth="1175" HorizontalAlignment="Left"
+         x:Name="title_bck"
+        Background="#a1afc9">
+
+    <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <Menu x:Name="menu_bck" Grid.Row="0" Background="#ed5736" Foreground="AliceBlue">
+            <MenuItem Margin="0 5 -5 0">
+                <MenuItem.Icon>
+                    <Image Source="D:\SunTalk\FMusic\img\file1.png" />
+
+                </MenuItem.Icon>
+                <MenuItem.Header>
+                    <Label Content="文件" VerticalAlignment="Center" FontSize="15" Margin="-10 0 0 0"/>
+                </MenuItem.Header>
+                <MenuItem Name="import" Click="import_Click">
+                    <MenuItem.Icon>
+                        <Image Source="D:\SunTalk\FMusic\img\import1.png" Height="16" VerticalAlignment="Bottom" Margin="4 0 -4 0"/>
+                    </MenuItem.Icon>
+                    <MenuItem.Header>
+                        <Label Margin="0,0,-40 ,0">导入音乐</Label>
+                    </MenuItem.Header>
+                </MenuItem>
+                <MenuItem Name="clear" Click="clear_Click">
+                    <MenuItem.Icon>
+                        <Image Source="D:\SunTalk\FMusic\img\clear1.png"  Margin="3 0 -3 0"/>
+                    </MenuItem.Icon>
+                    <MenuItem.Header>
+                        <Label Margin="0,0,-40 ,0">清空播放列表</Label>
+                    </MenuItem.Header>
+                </MenuItem>
+                <MenuItem Name="exit" Click="exit_Click">
+                    <MenuItem.Icon>
+                        <Image Source="D:\SunTalk\FMusic\img\exit1.png" Height="16" VerticalAlignment="Top" Margin="2 0 -2 0"/>
+                    </MenuItem.Icon>
+                    <MenuItem.Header>
+                        <Label Margin="0,0,-40 ,0">退出</Label>
+                    </MenuItem.Header>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Margin="0 5 -5 0">
+                <MenuItem.Icon>
+                    <Image Source="D:\SunTalk\FMusic\img\set.png" />
+                </MenuItem.Icon>
+                <MenuItem.Header>
+                    <Label Content="设置" VerticalAlignment="Center" FontSize="15" Margin="-10 0 0 0"/>
+                </MenuItem.Header>
+                <MenuItem>
+                    <MenuItem.Header>
+                        <Label Content="设置背景" Margin="0 0 -40 0"/>
+
+                    </MenuItem.Header>
+                    <MenuItem.Icon>
+                        <Image Source="D:\SunTalk\FMusic\img\背景颜色_background-color.png" Height="16" VerticalAlignment="Top" Margin="3 0 -3 0"></Image>
+                    </MenuItem.Icon>
+                    <MenuItem Click="SetBackGround1_Click ">
+                        <MenuItem.Header>
+                            <Label Margin="0 0 -40 0">水绿色</Label>
+                        </MenuItem.Header>
+                        <MenuItem.Icon>
+                            <TextBox Background="#8Db799" Height="12" Width="12" BorderThickness="0" VerticalAlignment="Center" Margin="3 0 -5 0"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Click="SetBackGround2_Click ">
+                        <MenuItem.Header>
+                            <Label Margin="0 0 -40 0">玉山</Label>
+                        </MenuItem.Header>
+                        <MenuItem.Icon>
+                            <TextBox Background="#719847" Height="12" Width="12" BorderThickness="0" VerticalAlignment="Center" Margin="3 0 -5 0"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Click="SetBackGround3_Click ">
+                        <MenuItem.Header>
+                            <Label Margin="0 0 -40 0">雪青</Label>
+                        </MenuItem.Header>
+                        <MenuItem.Icon>
+                            <TextBox Background="#A59ACA" Height="12" Width="12" BorderThickness="0" VerticalAlignment="Center" Margin="3 0 -5 0"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                  
+                    <Separator></Separator>
+                   
+                    <MenuItem Click="Bckresrt_Click">
+                        <MenuItem.Header>
+                            <Label Margin="0 0 -40 0" Content="恢复设置"/>
+                        </MenuItem.Header>
+                        <MenuItem.Icon>
+                            <Image Source="D:\SunTalk\FMusic\img\back.png" Height="14" VerticalAlignment="Center"  Margin="3 0 -8 0"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+                
+                
+                <MenuItem>
+                    <MenuItem.Header>
+                        <Label Margin="0 0 -40 0" Content="歌词背景颜色"/>
+                    </MenuItem.Header>
+                    <MenuItem.Icon>
+                        <Image Source="D:\SunTalk\FMusic\img\color.png" Height="14" VerticalAlignment="Center"  Margin="2 0 -2 0"/>
+                    </MenuItem.Icon>
+                    <MenuItem Click="LrcBackGround1_Click ">
+                        <MenuItem.Header>
+                            <Label Margin="0 0 -40 0">暗红色</Label>
+                        </MenuItem.Header>
+                        <MenuItem.Icon>
+                            <TextBox Background="#8B0000" Height="12" Width="12" BorderThickness="0" VerticalAlignment="Center" Margin="3 0 -5 0"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Click="LrcBackGround2_Click ">
+                        <MenuItem.Header>
+                            <Label Margin="0 0 -40 0">粉红色</Label>
+                        </MenuItem.Header>
+                        <MenuItem.Icon>
+                            <TextBox Background="#FFC0CB" Height="12" Width="12" BorderThickness="0" VerticalAlignment="Center" Margin="3 0 -5 0"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Click="LrcBackGround3_Click ">
+                        <MenuItem.Header>
+                            <Label Margin="0 0 -40 0">橙色</Label>
+                        </MenuItem.Header>
+                        <MenuItem.Icon>
+                            <TextBox Background="#FFA500" Height="12" Width="12" BorderThickness="0" VerticalAlignment="Center" Margin="3 0 -5 0"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator></Separator>
+
+                    <MenuItem Click="lrcBckresrt_Click">
+                        <MenuItem.Header>
+                            <Label Margin="0 0 -40 0" Content="恢复设置"/>
+                        </MenuItem.Header>
+                        <MenuItem.Icon>
+                            <Image Source="D:\SunTalk\FMusic\img\back.png" Height="14" VerticalAlignment="Center"  Margin="3 0 -8 0"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+                
+                
+                <MenuItem HorizontalAlignment="Left" Width="103" Click="Fontsizeup_Click">
+                    <MenuItem.Header>
+                        <Label Margin="0 0 -40 0" Content="字体增大"/>
+                    </MenuItem.Header>
+                    <MenuItem.Icon>
+                        <Image Source="D:\SunTalk\FMusic\img\sizeup.png" Height="14" VerticalAlignment="Center"  Margin="2 0 -2 0"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Click="Fontsizedown_Click">
+                    <MenuItem.Header>
+                        <Label Margin="0 0 -40 0" Content="字体减小"/>
+                    </MenuItem.Header>
+                    <MenuItem.Icon>
+                        <Image Source="D:\SunTalk\FMusic\img\sizedown.png" Height="14" VerticalAlignment="Center"  Margin="2 0 -2 0"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Click="Fontback_Click">
+                    <MenuItem.Header>
+                        <Label Margin="0 0 -40 0" Content="字体还原"/>
+                    </MenuItem.Header>
+                    <MenuItem.Icon>
+                        <Image Source="D:\SunTalk\FMusic\img\back.png" Height="14" VerticalAlignment="Center"  Margin="2 0 -2 0"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+        <Grid Grid.Row="1" Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TreeView x:Name="shu" Grid.Column="0" BorderThickness="1" Background="#CFE0F7" FontSize="14"  Foreground="AliceBlue">
+                <TreeViewItem Name ="MusicList"  Foreground="AliceBlue" >
+                    <TreeViewItem.Header>
+                        <StackPanel Orientation="Horizontal" Margin="-5 10 0 0" >
+                            <Image Source="D:\SunTalk\FMusic\img\mus.png" Width="20" Height="20" />
+                            <Label Content=" 本地音乐" Margin=" 2 0 0 0"  />
+                        </StackPanel>
+                    </TreeViewItem.Header>
+
+                </TreeViewItem>
+                
+                <TreeViewItem Name ="LoveList">
+                    <TreeViewItem.Header>
+                        <StackPanel Orientation="Horizontal" Margin="-5 10 0 0">
+                            <Image Source="D:\SunTalk\FMusic\img\favourite.png" Width="20" Height="20" />
+                            <Label Content=" Favourite" Margin=" 2 0 0 0"/>
+                        </StackPanel>
+                    </TreeViewItem.Header>
+
+                </TreeViewItem>
+                <TreeView.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Click="ContextMenu1_Click">
+                            <MenuItem.Header>
+                                <Label>删除</Label>
+                            </MenuItem.Header>
+                        </MenuItem>
+                        <MenuItem Click="ContextMenu2_Click">
+                            <MenuItem.Header>
+                                <Label>永久删除</Label>
+                            </MenuItem.Header>
+                        </MenuItem>
+                        <MenuItem Click="ContextMenu3_Click">
+                            <MenuItem.Header>
+                                <Label>添加我喜欢</Label>
+                            </MenuItem.Header>
+                        </MenuItem>
+                    </ContextMenu>
+                </TreeView.ContextMenu>
+            </TreeView>
+            <Grid x:Name="tupian" Grid.Column="1" Background="#ffffff">
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush x:Name="music_bck"  Opacity="0.8" ImageSource="{Binding ElementName=Muscover, Path=ImageSource}" />
+                    </Grid.Background>
+                    <Label Content="{Binding ElementName=MusName,Path=Content}" FontSize="30" Margin="0 150" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+                    <Canvas x:Name="LRC" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" >
+                        <TextBlock Name="lbLrc" FontSize="25" Canvas.Top="-80" Canvas.Left="-120" Text="未找到对应歌词" />
+                        <TextBlock Name="lbLrc2" FontSize="25" Canvas.Top="-30" Canvas.Left="-120"  Foreground="DarkGreen"/>
+                    </Canvas>
+                 
+                </Grid>
+            </Grid>
+
+        </Grid>
+        <Grid x:Name="mucic_bck" Grid.Row="2" Background="#FFD9E4F1" Grid.ColumnSpan="2" Margin=" 0 0 -0.2 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="210"/>
+                <ColumnDefinition />
+                <ColumnDefinition Width="240"/>
+            </Grid.ColumnDefinitions>
+            <Grid>
+                <Grid.Background>
+                    <ImageBrush x:Name="Muscover" ImageSource="D:\SunTalk\FMusic\img\king.png" />
+
+                </Grid.Background>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Border x:Name="UpBtn" Grid.Column ="0" Width=" 50" Height=" 50"  MouseLeftButtonDown="DownBtn_MouseLeftButtonDown"  MouseLeftButtonUp="DownBtn_MouseLeftButtonUp"  >
+                    <Border.Background>
+                        <ImageBrush ImageSource="D:\SunTalk\FMusic\img\go-start.png"/>
+                    </Border.Background>
+                </Border>
+                <Border x:Name="StartBtn" Grid.Column="1"  Width=" 55" Height=" 55" Tag="true"   MouseLeftButtonDown="DownBtn_MouseLeftButtonDown"  MouseLeftButtonUp="DownBtn_MouseLeftButtonUp" >
+                    <Border.Background>
+                        <ImageBrush ImageSource="D:\SunTalk\FMusic\img\pause.png"/>
+                    </Border.Background>
+                </Border>
+                <Border x:Name="DownBtn" Grid.Column="2"  Width=" 50" Height=" 50"  MouseLeftButtonDown="DownBtn_MouseLeftButtonDown" MouseLeftButtonUp="DownBtn_MouseLeftButtonUp" >
+                    <Border.Background>
+                        <ImageBrush ImageSource="D:\SunTalk\FMusic\img\go-end.png"/>
+                    </Border.Background>
+                </Border>
+            </Grid>
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Canvas Grid.Row="0" Margin="0 15 0 0" >
+                    <Label  Name="MusName"  HorizontalAlignment="Left"  FontSize="20" Canvas.Left="5"  Content="Music-Title"   MouseLeftButtonDown="Audioview">
+                        
+                    </Label>
+                        
+                    <Label Name="NowTime"  HorizontalContentAlignment="Right"  FontSize="20" Canvas.Right="105" Content="00:00:00"/>
+                    <Label VerticalContentAlignment="Center" FontSize="20" Canvas.Right="95" >/</Label>
+                    <Label Name="EndTime" HorizontalContentAlignment="Right"  FontSize="20" Canvas.Right="15" Content="00:00:00"/>
+                </Canvas>
+
+                <Slider x:Name="sliderPosition" ValueChanged="sliderPosition_ValueChanged"  Grid.Row="1" Margin=" 0 0 10 20" Width=" 580"/>
+
+            </Grid>
+
+            <Grid Grid.Column="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height=" 40"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" >
+                        <Button  Width="50" FontSize="22" Background="Transparent" BorderThickness="0" Click="Love_Click">
+                            <Image x:Name="love_txt" Source="D:\SunTalk\FMusic\img\like.png" Width="30" Height="30"/>
+                        </Button>
+                        <Button  Width="50" FontSize="22" Background="Transparent" BorderThickness="0" Click="Mucpattern_Click">
+                            <Image x:Name="pattern_txt" Source="D:\SunTalk\FMusic\img\play-cycle.png" Width="32" Height="32"/>
+                        </Button>
+                        <Button  Width="50" FontSize="22" Background="Transparent" BorderThickness="0" Click="Mute_Click">
+                            <Image x:Name="reback_txt" Source="D:\SunTalk\FMusic\img\mute.png" Width="28" Height="28"/>
+                        </Button>
+                     </StackPanel>
+                </Grid>
+
+                <StackPanel Orientation="Horizontal" Grid.Row="1">
+                    <Image x:Name="volume" Source="D:\SunTalk\FMusic\img\volume.png" Width="25" Height="25" Margin=" 32 0 0 0"/>
+                    <Slider x:Name="valu" Maximum="1" Minimum="0" Value="0.3" VerticalAlignment="Center" Margin=" 5 5 0 0" Width="160" Height="23"/>
+                </StackPanel>
+
+            </Grid>
+        </Grid>
+        <MediaElement x:Name="mediaElement" LoadedBehavior="Manual" HorizontalAlignment="Left" Volume="{Binding ElementName=valu,Path=Value }" Height="188" Margin="0,460,0,-548" Grid.Row="2" VerticalAlignment="Top" Width="250" Grid.ColumnSpan="2"/>
+
+    </Grid>
+</Window>

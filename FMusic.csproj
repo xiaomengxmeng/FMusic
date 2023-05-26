@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="music\**" />
+    <Compile Remove="music_cover\**" />
+    <EmbeddedResource Remove="music\**" />
+    <EmbeddedResource Remove="music_cover\**" />
+    <None Remove="music\**" />
+    <None Remove="music_cover\**" />
+    <Page Remove="music\**" />
+    <Page Remove="music_cover\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="back.png" />
+    <None Remove="favourite.png" />
+    <None Remove="file.png" />
+    <None Remove="Fmusic.png" />
+    <None Remove="Fontsizedown.png" />
+    <None Remove="Fontsizeup.png" />
+    <None Remove="import.png" />
+    <None Remove="king.png" />
+    <None Remove="love.png" />
+    <None Remove="set.png" />
+    <None Remove="上一首.png" />
+    <None Remove="下一首.png" />
+    <None Remove="关闭声音.png" />
+    <None Remove="分享页面.png" />
+    <None Remove="循环播放.png" />
+    <None Remove="暂停.png" />
+    <None Remove="音量.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NAudio" Version="2.1.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="TagLibSharp" Version="2.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="path\" />
+  </ItemGroup>
+
+</Project>
