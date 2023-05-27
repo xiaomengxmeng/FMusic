@@ -4,6 +4,10 @@
 C# WPF MusicPlayer Student
 本设计实例实现了音乐播放、音乐播放模式选择，窗体风格选择、音乐like,歌词显示,读取MP3flac文件封面等功能，
 
+
+### 图片
+![image](https://github.com/xiaomengxmeng/FMusic/assets/97726901/7d8ddc84-b5f6-418b-b7cd-a19b29890a00)
+
 #### 说明
 这是一个学生学习c#，完成大作业的一个c#wpf程序。
 由于本人还在学习，时间精力有限，程序还存在一点bug以后有时间再优化。
