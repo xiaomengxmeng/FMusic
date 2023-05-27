@@ -13,7 +13,7 @@ C# WPF MusicPlayer Student
 
 
 #### 安装教程
-使用NuGet 导入了俩个依赖
+使用NuGet 导入了
 1.  NAudio
 2.  Taglibshape
 
