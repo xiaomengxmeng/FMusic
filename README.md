@@ -34,6 +34,7 @@ C# WPF MusicPlayer Student
 3. 部分文件不含cover，程序崩溃
 4. 没有添加到其他播放列表的功能
 5. 切换歌曲，lrc没有清除
+6。播放音乐Kurousa-P、初音未来 - 千本桜 (千本樱) (Game Version).flac 点下一首有问题
 
 
 ###  总结
