@@ -17,7 +17,7 @@ C# WPF MusicPlayer Student
 2.  Taglibshape
 
 
-#### 使用说明
+#### 文件说明
 1. 程序有一个窗体 Music.xaml,及其cs文件
 2. MusicFiles 是音乐文件
 3. img是程序静态图片
