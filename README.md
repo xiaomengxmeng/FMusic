@@ -6,8 +6,7 @@ C# WPF MusicPlayer Student
 
 
 ### 图片
-[https://github.com/xiaomengxmeng/FMusic/blob/bca2aa8c5fc1497841414e021279dbfc78b0a23a/image.png]
-
+![Image Description](image1.png)
 #### 说明
 这是一个学生学习c#，完成大作业的一个c#wpf程序。
 由于本人还在学习，时间精力有限，程序还存在一点bug以后有时间再优化。
